@@ -5,135 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lauren Vo — Resume</title>
   <meta name="description" content="Resume of Lauren Vo — Data Science student at UC San Diego." />
-  
+  <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
-  <header>
-    <h1>Lauren Vo</h1>
-    <p>
-      <a href="mailto:lavo@ucsd.edu">lavo@ucsd.edu</a> ·
-      <a href="tel:+14088261719">+1&nbsp;408-826-1719</a> ·
-      <a href="https://www.linkedin.com/in/laurenthanhvo/" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a href="https://github.com/laurenthanhvo" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </header>
 
-  <nav aria-label="Main">
+<body class="cv">
+  <nav>
     <a href="../">Home</a>
-    <a href="../projects/">Projects</a>
     <a href="../contact/">Contact</a>
-    <a href="./" aria-current="page">Resume</a>
-    <a href="https://github.com/laurenthanhvo" target="_blank" rel="noopener">Github Profile</a>
+    <a href="../projects/">Projects</a>
+    <a href="https://github.com/laurenthanhvo" target="_blank" rel="noopener noreferrer">Github Profile</a>
+    <a href="./" class="current" aria-current="page" >Resume</a>
   </nav>
 
-  <main>
-    <section aria-labelledby="summary">
-      <h2 id="summary">Summary</h2>
-      <p>UC San Diego student (Data Science) focused on web apps, geospatial analytics, and human-centered tools. Experienced shipping React/TypeScript and Python backends, mapping &amp; GIS workflows, and turning research into usable products.</p>
-    </section>
+  <div class="cv-layout">
+    <aside class="cv-card">
+      <img class="cv-photo" src="../images/headshot.jpeg" alt="Photo of Lauren Vo" />
 
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <article>
-        <div>
-          <h3>University of California, San Diego — B.S. Data Science</h3>
-          <p>La Jolla, CA · <time datetime="2026-06">Expected Jun 2026</time></p>
-        </div>
-        <ul>
-          <li>Coursework highlights: Data Science, Web apps, Statistics, Algorithms.</li>
-        </ul>
-      </article>
-    </section>
+      <h2 class="cv-name">Lauren Vo</h2>
 
-    <section aria-labelledby="projects">
-      <h2 id="projects">Projects</h2>
+      <h2 class="cv-side-title">Education</h2>
+      <p class="cv-edu">
+        University of California, San Diego — B.S. Data Science<br />
+        <small>La Jolla, CA · <time datetime="2026-06">Expected Jun 2026</time></small>
+      </p>
 
-      <article>
-        <div>
-          <h3>Open-Source Dev Copilot (Godot + PyTorch)</h3>
-          <p><time datetime="2025-08">Aug 2025</time> – <time datetime="2025-10">Present</time></p>
-        </div>
-        <p>Python (FastAPI, Pydantic, Uvicorn), hybrid retrieval/rerank, NDJSON streaming, OpenAI/Ollama, Tailwind</p>
-        <ul>
-          <li>Built an assistant that only answers from trusted docs (pytorch.org/docs, docs.godotengine.org) and streams results step by step.</li>
-          <li>Set up hybrid search (keywords + embeddings) with rules to remove duplicates, block irrelevant results, and fallback to broader search when needed.</li>
-          <li>Wrote prompts that require citations with short quotes; enforced JSON output and per‑source summaries to keep answers accurate.</li>
-          <li>Deployed a testing endpoint with pass/fail checks for CI, plus request logging, timing, and a strict‑source mode for reliability.</li>
-        </ul>
-      </article>
+      <h2 class="cv-side-title">Skills</h2>
+      <div class="skill">
+        <div class="skill-label">Python</div>
+        <div class="skill-bar"><span style="--w: 90%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label">React / TypeScript</div>
+        <div class="skill-bar"><span style="--w: 80%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label">Geo / GIS</div>
+        <div class="skill-bar"><span style="--w: 75%"></span></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label">SQL &amp; Data Viz</div>
+        <div class="skill-bar"><span style="--w: 70%"></span></div>
+      </div>
+    </aside>
 
-      <article>
-        <div>
-          <h3>Heat Vulnerability &amp; Cooling Access — San Diego County</h3>
-          <p><time datetime="2025-07">Jul 2025</time> – <time datetime="2025-09">Sep 2025</time></p>
-        </div>
-        <p>Python (pandas, geopandas, statsmodels, osmnx, networkx), Streamlit, Folium, Earth Engine, GDAL/GeoTIFF, ACS</p>
-        <ul>
-          <li>Built a tool to guide where cooling centers should be placed by combining satellite data, demographics, and walkability models.</li>
-          <li>Processed Landsat 8/9 (2021–2024) in Earth Engine to produce tract‑level maps of land surface temperature and vegetation.</li>
-          <li>Converted CDC heat‑health data from ZIP to census tract using housing weights; cleaned coordinate systems and geometries.</li>
-          <li>Modeled heat‑related events with Poisson regression; produced 0–1 risk scores and used HVI as a backup where data was missing.</li>
-          <li>Calculated walk‑time coverage and ran a site‑selection optimizer to place <em>k</em> centers with maximum equity; delivered an interactive Streamlit map with before/after comparisons.</li>
-        </ul>
-      </article>
+    <main class="cv-main">
+      <section aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p>UC San Diego student (Data Science) focused on web apps, geospatial analytics, and human-centered tools. Experienced shipping React/TypeScript and Python backends, mapping &amp; GIS workflows, and turning research into usable products.</p>
+      </section>
 
-      <article>
-        <div>
-          <h3>Innovating for X (I4X) Internship — Father Joe’s Villages</h3>
-          <p>San Diego, CA · <time datetime="2025-01">Jan 2025</time> – <time datetime="2025-08">Aug 2025</time></p>
-        </div>
-        <p>React, TypeScript, Flask/SocketIO, JWT/RBAC, Leaflet.js, PostgreSQL, Gemini API, Power BI</p>
-        <ul>
-          <li>Built a location‑aware platform for real‑time resource coordination and staff–resident communication.</li>
-          <li>Conducted fieldwork with staff and residents; translated findings into workflows and requirements aligned with privacy and governance needs.</li>
-          <li>Automated intake checks and resident messaging with Gemini assistants, reducing manual data entry.</li>
-          <li>Delivered CommuniCare: secure role‑based chat with channels, templates, delivery receipts, profanity filters, and logs.</li>
-          <li>Integrated Leaflet maps so chats pin locations and trigger service requests tied to markers, speeding up response times.</li>
-          <li>Designed and tested prototypes from low‑ to high‑fidelity; handed off specs and dashboards for long‑term use.</li>
-        </ul>
-      </article>
-    </section>
+      <section aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
 
-    <section aria-labelledby="experience">
-      <h2 id="experience">Experience</h2>
+        <article>
+          <div>
+            <h3>Marketing Chair — IEEE UC San Diego</h3>
+            <p>La Jolla, CA · <time datetime="2024-11">Nov 2024</time> – <time datetime="2025-10">Present</time></p>
+          </div>
+          <ul>
+            <li>Led a data-driven engagement strategy for a 300+ member community; prioritized campaigns from analytics and a clear roadmap to grow participation.</li>
+            <li>Managed social media platforms (Instagram, Discord); created engaging posts and videos to grow reach and strengthen community engagement.</li>
+            <li>Partnered with engineering/design to convert technical projects into compelling product stories and multi-channel campaigns.</li>
+          </ul>
+        </article>
 
-      <article>
-        <div>
-          <h3>Marketing Chair — IEEE UC San Diego</h3>
-          <p>La Jolla, CA · <time datetime="2024-11">Nov 2024</time> – <time datetime="2025-10">Present</time></p>
-        </div>
-        <ul>
-          <li>Led a data‑driven engagement strategy for a 300+ member community; prioritized campaigns from analytics and a clear roadmap to grow participation.</li>
-          <li>Managed social platforms (Instagram, Discord); created posts and videos to grow reach and strengthen community engagement.</li>
-          <li>Partnered with engineering/design to convert technical projects into compelling product stories and multi‑channel campaigns.</li>
-        </ul>
-      </article>
+        <article>
+          <div>
+            <h3>Administrative Assistant (Part-time) — Vista Park Dental Care</h3>
+            <p>San Jose, CA · <time datetime="2022-06">Jun 2022</time> – <time datetime="2024-09">Sep 2024</time></p>
+          </div>
+          <ul>
+            <li>Delivered professional front-office support in a fast-paced dental practice, coordinating patient scheduling, confirming appointments, and managing multi-line phones with accuracy and discretion.</li>
+            <li>Maintained and updated confidential patient records, verified insurance coverage, and processed billing with careful attention to detail and compliance requirements.</li>
+            <li>Leveraged software tools including Dentrix, Microsoft Office, and OpenOffice to streamline documentation.</li>
+            <li>Assisted with office supply management and managed the practice’s social media presence.</li>
+          </ul>
+        </article>
+      </section>
 
-      <article>
-        <div>
-          <h3>Administrative Assistant (Part‑time) — Vista Park Dental Care</h3>
-          <p>San Jose, CA · <time datetime="2022-06">Jun 2022</time> – <time datetime="2024-09">Sep 2024</time></p>
-        </div>
-        <ul>
-          <li>Coordinated patient scheduling, confirmations, and multi‑line phones with accuracy and discretion.</li>
-          <li>Maintained confidential records, verified insurance, and processed billing with attention to compliance.</li>
-          <li>Leveraged tools including Dentrix, Microsoft Office, and OpenOffice to streamline documentation.</li>
-          <li>Assisted with supply management and supported the office’s social media presence.</li>
-        </ul>
-      </article>
-    </section>
+      <section aria-labelledby="projects">
+        <h2 id="projects">Projects</h2>
 
-    <section aria-labelledby="skills">
-      <h2 id="skills">Skills</h2>
-      <ul>
-        <li><strong>Languages &amp; Data:</strong> Python (pandas, scikit‑learn, statsmodels, FastAPI), SQL, R, Microsoft Excel</li>
-        <li><strong>Web &amp; Apps:</strong> React, TypeScript, Flask/SocketIO, Tailwind</li>
-        <li><strong>Geo &amp; Spatial:</strong> GeoPandas, GDAL, OSMnx, NetworkX, Folium/Leaflet, Google Earth Engine</li>
-        <li><strong>Visualization &amp; Dashboards:</strong> Power BI, Tableau, Streamlit</li>
-        <li><strong>Design &amp; Media:</strong> Figma, Canva, social media management (Instagram, Discord), content creation (posts, video)</li>
-        <li><strong>Other:</strong> Git, CI/CD, PyTorch, project coordination</li>
-      </ul>
-    </section>
-  </main>
+        <article>
+          <div>
+            <h3>VIDIV — Voice Insurance Verifier (Twilio + VAPI + Deepgram + ElevenLabs)</h3>
+            <p><time datetime="2025-09">Sep 2025</time> – Present</p>
+          </div>
+          <p>Python (FastAPI, Pydantic, Uvicorn/httpx), RAG (TF–IDF + citations), pytest/TestClient, Docker</p>
+          <ul>
+            <li>Built a voice workflow for live dental insurance verification (PSTN → VAPI webhooks → FastAPI tools) with barge-in and concise TTS; will integrate real 270/271 eligibility.</li>
+            <li>Shipped JSON-strict APIs; processed schedule CSVs and will generate printable PDFs for front-desk use.</li>
+            <li>Implemented payer-policy RAG (Delta Dental, Cigna, Guardian) with grounded citations; will upgrade to PDF chunking + vector search.</li>
+            <li>Developed an eval harness reporting financial/coverage exact-match, citation presence, hallucination rate, and latency; will scale to ~60 edge cases.</li>
+            <li>Added observability and security: p50/p95 timings, audit logs with PHI redaction, and API-key–protected webhooks; will add ASR hints for CDT codes (D1110, D2740, etc.).</li>
+          </ul>
+        </article>
+
+        <article>
+          <div>
+            <h3>Open-Source Dev Copilot (Godot + PyTorch)</h3>
+            <p><time datetime="2025-08">Aug 2025</time> – Present</p>
+          </div>
+          <p>Python (FastAPI, Pydantic, Uvicorn), hybrid retrieval/rerank, NDJSON streaming, OpenAI/Ollama, Tailwind</p>
+          <ul>
+            <li>Built an assistant that only answers from trusted docs (pytorch.org/docs, docs.godotengine.org) and streams results step by step.</li>
+            <li>Set up hybrid search (keywords + embeddings) with rules to remove duplicates, block irrelevant results, and fallback to broader search when needed.</li>
+            <li>Wrote prompts that require citations with short quotes; enforced JSON output and per-source summaries to keep answers accurate.</li>
+            <li>Deployed a testing endpoint with pass/fail checks for CI, plus request logging, timing, and a strict-source mode for reliability.</li>
+          </ul>
+        </article>
+
+        <article>
+          <div>
+            <h3>Heat Vulnerability &amp; Cooling Access — San Diego County</h3>
+            <p><time datetime="2025-07">Jul 2025</time> – <time datetime="2025-09">Sep 2025</time></p>
+          </div>
+          <p>Python (pandas, geopandas, statsmodels, osmnx, networkx), Streamlit, Folium, Earth Engine, GDAL/GeoTIFF, ACS</p>
+          <ul>
+            <li>Built a decision tool that prioritizes cooling-center locations by fusing satellite heat, demographics, and walkability.</li>
+            <li>Processed Landsat 8/9 in Earth Engine to generate tract-level LST/NDVI layers; standardized CRS and geometries.</li>
+            <li>Re-keyed CDC heat-health events from ZIP to census tract via housing weights; cleaned and validated inputs.</li>
+            <li>Modeled heat risk with Poisson GLM to produce 0–1 risk scores; used HVI as fallback where events were sparse.</li>
+            <li>Computed walk-time coverage and solved a k-facility placement to maximize equity; shipped an interactive Streamlit map with before/after comparisons.</li>
+          </ul>
+        </article>
+
+        <article>
+          <div>
+            <h3>Innovating for X (I4X) Internship — Father Joe’s Villages</h3>
+            <p>San Diego, CA · <time datetime="2025-01">Jan 2025</time> – <time datetime="2025-08">Aug 2025</time></p>
+          </div>
+          <p>React, TypeScript, Flask/SocketIO, JWT/RBAC, Leaflet.js, PostgreSQL, Gemini API, Power BI</p>
+          <ul>
+            <li>Built a location-aware platform for real-time resource coordination and staff–resident communication in San Diego.</li>
+            <li>Conducted fieldwork with staff and residents; turned findings into workflows and requirements aligned with privacy and governance needs.</li>
+            <li>Automated intake checks and resident messaging with Gemini assistants, reducing manual data entry.</li>
+            <li>Delivered CommuniCare: secure role-based chat with channels, templates, delivery receipts, profanity filters, and logs.</li>
+            <li>Integrated Leaflet maps so chats pin locations and trigger service requests tied to markers, speeding up response times.</li>
+            <li>Designed and tested prototypes from low- to high-fidelity; handed off specs and dashboards for long-term use.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

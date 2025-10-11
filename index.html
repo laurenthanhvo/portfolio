@@ -1,22 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <html lang="en"></html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAUREN VO: Personal site and portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lauren Vo — Portfolio & Personal Site</title>
+  <meta name="description" content="UC San Diego Data Science student — projects, resume, and contact info." />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
-   <h1>Lauren Vo</h1> 
-   <nav>
-    <a href="./">Home</a>
+
+<body class="home">
+  <nav>
+    <a href="./" class="current">Home</a>
     <a href="contact/">Contact</a>
     <a href="projects/">Projects</a>
     <a href="https://github.com/laurenthanhvo" target="_blank">Github Profile</a>
     <a href="resume/">Resume</a>
-    </nav>
-   <p>I am a fourth year Data Science major at UC San Diego.</p>
+  </nav>
 
-   <img src="images/headshot.jpeg" width="600" height="600" alt="Girl standing with nature in the background">
+  <header class="home-hero">
+    <div class="hero-copy">
+      <h1>Lauren Vo</h1>
+      <p class="tagline">UC San Diego Data Science student focused on web apps, geospatial analytics, and human-centered tools.</p>
+
+      <ul class="quickfacts">
+        <li>Building with Python, React/TypeScript, and GIS tooling</li>
+        <li>Interested in applied ML, civic tech, and design systems</li>
+        <li>Open to internships &amp; collaborations</li>
+      </ul>
+
+      <div class="cta-row">
+        <a class="btn primary" href="projects/">View Projects</a>
+        <a class="btn" href="resume/">Resume</a>
+        <a class="btn ghost" href="contact/">Contact</a>
+      </div>
+    </div>
+
+    <figure class="hero-photo">
+      <img src="images/headshot.jpeg" alt="Portrait of Lauren Vo">
+    </figure>
+  </header>
+
+  <section class="home-highlights" aria-label="Highlights">
+    <article class="card">
+      <h2>Recent Project</h2>
+      <p>VIDIV: a voice assistant that verifies dental insurance with grounded citations and strict JSON APIs.</p>
+      <a href="projects/" class="link">Browse projects →</a>
+    </article>
+
+    <article class="card">
+      <h2>Experience</h2>
+      <p>Marketing Chair at IEEE UCSD; previously at Vista Park Dental Care. I care about useful, usable products.</p>
+      <a href="resume/" class="link">See my resume →</a>
+    </article>
+
+    <article class="card">
+      <h2>Get in touch</h2>
+      <p>Have an idea or opening? I’m always happy to chat about data, maps, or product.</p>
+      <a href="contact/" class="link">Contact me →</a>
+    </article>
+  </section>
 </body>
-</html>

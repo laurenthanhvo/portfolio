@@ -2,30 +2,32 @@
 <html>
 <head>
   <title>Contact Page</title>
+  <link rel="stylesheet" href="../styles.css">
   <meta charset="utf-8">
 </head>
-<body>
+<body class="contact">
 
-<h1>Contact</h1>
 <nav>
   <a href="../">Home</a>
-  <a href="./">Contact</a>
+  <a href="./" class="current">Contact</a>
   <a href="../projects/">Projects</a>
   <a href="https://github.com/laurenthanhvo" target="_blank">Github Profile</a>
   <a href="../resume/">Resume</a>
 </nav>
 
+<h1>Contact</h1>
+
 <form action="mailto:lavo@ucsd.edu" method="POST" enctype="text/plain">
   <label>Email:
-    <input type="email" name="email">
+    <input type="email" name="email" placeholder="lavo@ucsd.edu"> 
   </label>
   <label>Subject:
-    <input name="subject">
+    <input name="subject" placeholder="Hello">
   </label>
   <label>Body:
-    <textarea name="body"></textarea>
+    <textarea name="body" placeholder = "Write your message...""></textarea>
   </label>
-  <button>Submit</button>
+  <button type="submit">Send</button>
 </form>
 
 </body>
