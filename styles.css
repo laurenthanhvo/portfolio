@@ -1,9 +1,16 @@
 :root{
-  --olive: #707848;          
-  --sage:  #afb66c;        
+  --olive: #707848;
+  --sage:  #afb66c;
   --color-accent: var(--olive);
   --accent: var(--olive);
-  --border: var(--sage);
+  --border: var(--sage); 
+  --surface: color-mix(in oklch, canvas, canvastext 18%);
+}
+
+html {
+  color-scheme: light dark;  
+  background: canvas;        
+  color: canvastext;       
 }
 
 body {
@@ -40,9 +47,10 @@ nav a.current {
 nav a:hover {
   border-bottom: 0.4em solid var(--olive);
   padding-bottom: calc(0.5em - 0.4em);
-  background-color: #afb66c1a;
+  background-color: color-mix(in oklch, var(--sage), canvas 85%);
   text-decoration: none;
 }
+
 nav a.current:hover { border-bottom-color: var(--olive); }
 
 input, textarea, button { font: inherit; }
@@ -346,8 +354,6 @@ nav a:focus-visible,
   border-radius: .5rem;
 }
 
-nav a:hover { background-color: #afb66c1a; }
-
 .contact form > button[type="submit"]{
   background: var(--olive);      
   color: #fff;                  
@@ -374,4 +380,51 @@ nav a:hover { background-color: #afb66c1a; }
 .contact form > button[type="submit"]:disabled{
   opacity: .6;
   cursor: not-allowed;
+}
+
+nav {
+  --border-color: color-mix(in oklch, var(--sage), canvas 60%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cv .cv-card,
+.cv .cv-main section,
+.btn {
+  border-color: color-mix(in oklch, var(--sage), canvas 60%);
+}
+
+label.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.8em;
+}
+
+input, textarea, button, select { font-family: inherit; }
+
+.home-highlights .card,
+.cv .cv-card,
+.cv .cv-main section {
+  background: canvas;     
+  color: canvastext;      
+  border: 1px solid color-mix(in oklch, var(--sage), canvas 55%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-highlights .card,
+  .cv .cv-card,
+  .cv .cv-main section {
+    background: color-mix(in oklch, canvas, canvastext 22%);
+  }
+}
+
+.home-highlights .card,
+.cv .cv-card,
+.cv .cv-main section {
+  background: light-dark(
+    canvas,                                
+    color-mix(in oklch, canvas, canvastext 22%) 
+  );
+  color: canvastext;
+  border: 1px solid color-mix(in oklch, var(--sage), canvas 55%);
 }
