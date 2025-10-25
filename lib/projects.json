@@ -1,0 +1,74 @@
+[
+    {
+        "title": "VIDIV - Voice Insurance Verifier",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Build a voice workflow for live dental insurance verification (PSTN → VAPI webhooks → FastAPI tools) with barge-in and concise TTS; will integrate real 270/271 eligibility."
+    },
+    {
+        "title": "Open-Source Dev Copilot",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built an assistant that only answers from trusted docs (pytorch.org/docs, docs.godotengine.org) and streams results step by step."
+    },
+    {
+        "title":"Heat Vulnerability & Cooling Access - San Diego County",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built a decision tool that prioritizes cooling-center locations by fusing satellite heat, demographics, and walkability."
+    },
+    {
+        "title": "Innovating for X (I4X) Internship - Father Joe's Villages",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built a location-aware platform for real-time resource coordination and staff-client communication in San Diego."
+    },
+    {
+        "title": "Recipe Overpromise Analytics",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Can we detect, based on publish-time attributes, when a recipe author has overpromised and home cooks end up rating it poorly? Analyzed 83,782 Food.com recipes."
+    },
+    {
+        "title": "Excepturi dolore mollitia sed!",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Debitis incidunt dolores vero asperiores nobis sequi fugiat rerum laudantium repellat cupiditate, aliquid numquam omnis distinctio! Similique accusamus doloribus quibusdam soluta tenetur, laudantium minima sed in eveniet nostrum consectetur repellat?"
+    },
+    {
+        "title": "Minima delectus deleniti soluta?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Possimus expedita quae veritatis rerum eos sit accusamus iste nostrum itaque aspernatur nemo quam at dicta modi sed velit officia tempore recusandae ipsam, vitae unde nihil exercitationem. Error, ratione quis."
+    },
+    {
+        "title": "Impedit maxime assumenda quod!",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Repudiandae voluptas dolorum nihil ad fugit aliquid quo aspernatur recusandae explicabo omnis esse illum modi consequatur, rerum nesciunt hic, iste doloremque consectetur ex totam, nulla nemo labore! At, eos voluptatem!"
+    },
+    {
+        "title": "Ab laboriosam natus similique.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Sed cupiditate aperiam iure dolores doloribus veritatis temporibus expedita harum, quod, ipsum dolore autem nemo! Quis facere odio optio doloremque dolor dignissimos amet pariatur iure distinctio. Quidem obcaecati et modi."
+    },
+    {
+        "title": "Officiis quisquam numquam molestias!",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Praesentium tenetur atque dolore excepturi dolorem repellat fugiat accusamus ea libero? Perferendis eius iure iste sunt facilis quaerat blanditiis voluptas accusamus harum laudantium doloremque nostrum, ducimus quis impedit possimus eum."
+    },
+    {
+        "title": "Calabay (CalHacks)",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A game, built in Java, that promotes environmental sustainability. Consists of 3 different levels: trivia, a recycling sorting game, and turning off unused electrical appliances."
+    },
+    {
+        "title": "PosiBot (Adobe Career Academy Project)",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A productivity and motivational Slack bot to enhance your workspace. PosiBot is a friendly companion designed to infuse positivity into your Slack workspace."
+    }
+]
