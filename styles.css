@@ -451,3 +451,88 @@ input, textarea, button, select { font-family: inherit; }
   line-height: 1.1;
   margin: 0; 
 }
+
+.chart-row,
+.container {
+  display: flex;
+  align-items: center;   
+  gap: 2rem;            
+  margin-block: 1.5rem;
+}
+
+#projects-plot,
+#projects-pie-plot {
+  flex: 0 0 auto;
+  max-width: 22rem;      
+  overflow: visible;
+}
+
+.legend {
+  list-style: none;
+  margin: 0 0 0 1rem;         
+  padding: 1rem 1.25rem;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.75rem 1.25rem;        
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.legend .swatch {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--color);
+}
+
+.legend li.selected {
+  outline: 1px solid currentColor;
+  border-radius: 0.25rem;
+  padding-inline: 0.25rem;
+  font-weight: 600;
+}
+
+#projects-plot:has(path:hover) path:not(:hover),
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+#projects-plot:has(path.selected) path:not(.selected),
+#projects-pie-plot:has(path.selected) path:not(.selected) {
+  opacity: 0.5;
+}
+
+#projects-plot path.selected,
+#projects-pie-plot path.selected {
+  opacity: 1;
+}
+
+#projects-plot path,
+#projects-pie-plot path {
+  transition: opacity 300ms ease, transform 300ms ease;
+  cursor: pointer;
+}
+
+.legend {
+  display: flex;              
+  align-items: center;
+  gap: 1.25rem;              
+  flex-wrap: wrap;          
+  width: max-content;         
+}
+
+.legend li {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
