@@ -588,6 +588,34 @@ input, textarea, button, select { font-family: inherit; }
   margin-top: 1.5rem;
 }
 
+/* Scrollytelling layout for scatter plot */
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+#scatter-story .step {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
 .gridlines line {
   stroke: #e5e7eb; 
   stroke-width: 1;
@@ -635,6 +663,10 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+
+  @starting-style {
+    r: 0;
+  }
 }
 
 circle:hover {
@@ -708,3 +740,158 @@ circle.selected {
     "Liberation Mono", "Courier New", monospace;
   font-size: 0.95rem;
 }
+
+/* File unit visualization (Step 2) */
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 0.75rem 1rem;
+  margin-top: 2rem;
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+  }
+
+  dd {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    gap: 0.15em;
+    padding-top: 0.6em;
+    margin-left: 0;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+  }
+
+  small {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 0.1rem;
+  }
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+/* slider row like in the screenshot */
+.commit-filter {
+  margin-block: 1rem 1.5rem;
+}
+
+.commit-filter label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.commit-filter input[type="range"] {
+  flex: 1;
+}
+
+.commit-filter time {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* files unit visualization */
+#files {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 0.75rem;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files dt {
+  grid-column: 1;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
+#files code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+#files small {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.15rem;
+}
+
+/* make chart full width */
+#chart {
+  margin-top: 1.5rem;
+}
+
+#chart svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* gridlines & dots (you already had most of this) */
+.gridlines line {
+  stroke: #e5e7eb;
+  stroke-width: 1;
+}
+
+.gridlines path {
+  display: none;
+}
+
+.dots circle {
+  stroke: white;
+  stroke-width: 0.5;
+  @starting-style {
+    r: 0;
+  }
+}
+
+/* hover animations */
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+

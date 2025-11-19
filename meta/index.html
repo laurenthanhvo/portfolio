@@ -7,24 +7,49 @@
     <link rel="stylesheet" href="../styles.css" />
     <script src="../global.js" type="module"></script>
   </head>
-  <body>
+  <body class="meta">
     <main>
       <h1>Meta</h1>
+
+      <!-- Step 1.1: slider + time label -->
+      <div class="commit-filter">
+        <label for="commit-progress">
+          Show commits until:
+          <input
+            id="commit-progress"
+            type="range"
+            min="0"
+            max="100"
+            value="100"
+          />
+          <time id="commit-time"></time>
+        </label>
+      </div>
+
+      <!-- Step 2 unit visualization (files) -->
+      <dl id="files">
+        <!-- populated by D3 -->
+      </dl>
+
+      <!-- summary stats -->
       <div id="stats"></div>
+
+      <!-- scatterplot -->
       <h2>Commits by time of day</h2>
       <div id="chart"></div>
 
+      <!-- tooltip for commits -->
       <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd>
-          <a href="" id="commit-link" target="_blank" rel="noopener noreferrer"></a>
+          <a href="" id="commit-link" target="_blank"></a>
         </dd>
 
         <dt>Date</dt>
         <dd id="commit-date"></dd>
 
         <dt>Time</dt>
-        <dd id="commit-time"></dd>
+        <dd id="commit-time-detail"></dd>  <!-- this id MUST match JS -->
 
         <dt>Author</dt>
         <dd id="commit-author"></dd>
@@ -32,6 +57,7 @@
         <dt>Lines edited</dt>
         <dd id="commit-lines"></dd>
       </dl>
+
 
       <p id="selection-count">No commits selected</p>
       <dl id="language-breakdown" class="stats language-stats"></dl>
