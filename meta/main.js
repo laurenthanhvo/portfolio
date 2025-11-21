@@ -1,21 +1,16 @@
-// meta/main.js
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 let xScale;
 let yScale;
 
-// globals for data + filtering
 let data;
 let commits;
 let filteredCommits;
 
-// slider-related globals (Lab 8 Step 1.1)
 let commitProgress = 100;
 let timeScale;
 let commitMaxTime = null;
-
-/* ----------------------------- Load data ------------------------------ */
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -39,7 +34,7 @@ function processCommits(data) {
 
       return {
         id: commit,
-        url: 'https://github.com/portfolio/commit/' + commit, // change if you want
+        url: 'https://github.com/portfolio/commit/' + commit, 
         author,
         date,
         time,
@@ -51,8 +46,6 @@ function processCommits(data) {
       };
     });
 }
-
-/* ----------------------------- Stats panel --------------------------- */
 
 function renderCommitInfo(data, commits) {
   const statsRoot = d3.select('#stats');
@@ -108,8 +101,6 @@ function renderCommitInfo(data, commits) {
   }
 }
 
-/* ------------------------- Scatterplot + brush ------------------------ */
-
 function renderScatterPlot(data, commits) {
   const width = 1000;
   const height = 600;
@@ -154,7 +145,7 @@ function renderScatterPlot(data, commits) {
 
   dots
     .selectAll('circle')
-    .data(sortedCommits, (d) => d.id) // key by id (Step 1.3)
+    .data(sortedCommits, (d) => d.id) 
     .join('circle')
     .attr('cx', (d) => xScale(d.datetime))
     .attr('cy', (d) => yScale(d.hourFrac))
@@ -200,7 +191,6 @@ function renderScatterPlot(data, commits) {
     .attr('class', 'y-axis')
     .call(yAxis);
 
-  /** ---- brushing helpers ---- */
 
   function isCommitSelected(selection, commit) {
     if (!selection) return false;
@@ -274,8 +264,6 @@ function renderScatterPlot(data, commits) {
   svg.selectAll('.dots').raise();
 }
 
-/* ------------------------------ Tooltip ------------------------------- */
-
 function renderTooltipContent(commit) {
   if (!commit) return;
 
@@ -309,8 +297,6 @@ function updateTooltipPosition(event) {
   tooltip.style.left = `${event.clientX + offset}px`;
   tooltip.style.top = `${event.clientY + offset}px`;
 }
-
-/* ---------------------- Unit visualization (files) -------------------- */
 
 function updateFileDisplay() {
   const container = d3.select('#files');
@@ -351,8 +337,6 @@ function updateFileDisplay() {
     .attr('class', 'loc')
     .attr('style', (d) => `--color: ${colors(d.type)}`);
 }
-
-/* -------------------------- Slider filtering -------------------------- */
 
 function onTimeSliderChange() {
   const slider = document.getElementById('commit-progress');
@@ -437,8 +421,6 @@ function updateCommitStats(allData, commitsSubset) {
   renderCommitInfo(allData, commitsSubset);
 }
 
-/* --------------------------- Scrollytelling --------------------------- */
-
 function setupScrollytelling() {
   d3
     .select('#scatter-story')
@@ -472,7 +454,6 @@ function setupScrollytelling() {
 
     const cutoffDate = activeCommit.datetime;
 
-    // sync globals + slider + time label with this cutoff
     commitMaxTime = cutoffDate;
     if (timeScale) {
       commitProgress = timeScale(commitMaxTime);
@@ -511,23 +492,17 @@ function setupScrollytelling() {
   window.addEventListener('resize', () => scroller.resize());
 }
 
-/* ------------------------------- Init --------------------------------- */
-
 data = await loadData();
 commits = processCommits(data);
 
-// keep chronological for slider + scrollytelling
 commits.sort((a, b) => d3.ascending(a.datetime, b.datetime));
 
-// initial state: all commits visible
 filteredCommits = commits;
 
-// initial render
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
 updateFileDisplay();
 
-// Lab 8 slider setup (Step 1.1)
 timeScale = d3
   .scaleTime()
   .domain([
@@ -540,7 +515,6 @@ document
   .getElementById('commit-progress')
   .addEventListener('input', onTimeSliderChange);
 
-// initial slider sync to "all commits"
 commitMaxTime = d3.max(commits, (d) => d.datetime);
 commitProgress = 100;
 const timeElInit = document.getElementById('commit-time');
@@ -552,5 +526,4 @@ if (timeElInit) {
 }
 updateCommitStats(data, filteredCommits);
 
-// Scrollytelling (Step 3)
 setupScrollytelling();

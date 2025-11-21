@@ -974,114 +974,100 @@ circle:hover {
 #scrolly-1 {
   position: relative;
   display: flex;
-  gap: 1.5rem;      /* a bit more breathing room between columns */
+  gap: 1.5rem;     
 }
 
-/* left column: narrower */
 #scatter-story {
-  flex: 0 0 30%;    /* ~1/3 of the width */
-  max-width: 34rem; /* optional: keeps text line length reasonable */
+  flex: 0 0 30%;   
+  max-width: 34rem; 
 }
 
-/* right column: wider */
 #scatter-plot {
-  flex: 0 0 50%;    /* ~2/3 of the width */
+  flex: 0 0 50%;   
   position: sticky;
   top: 0;
-  height: 55vh;     /* whatever height you settled on */
+  height: 55vh;     
 }
 
-/* --- Meta stats: stacked rows --- */
 #stats {
   margin: 1.5rem 0 1rem;
 }
 
 #stats .stats {
-  /* 2-column grid: label in col 1, value in col 2 */
   display: grid;
   grid-template-columns: max-content auto;
   row-gap: 0.4rem;
   column-gap: 1.25rem;
 }
 
-/* label (dt) */
 #stats .stats dt {
   grid-column: 1;
   margin: 0;
   font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #6b7280;          /* gray-ish */
+  color: #6b7280;      
 }
 
-/* value (dd) */
 #stats .stats dd {
   grid-column: 2;
   margin: 0;
   font-size: 1.1rem;
   font-weight: 650;
-  color: #111827;          /* dark text */
+  color: #111827;     
 }
 
 #scatter-story {
   position: relative;
-  padding-bottom: 38vh; /* add lots of empty space after the last commit */
+  padding-bottom: 38vh; 
 }
 
-/* Meta stats block: LABEL : VALUE layout */
 #stats {
   margin: 1.75rem 0 2rem;
 }
 
-/* make the dl behave like a 2-column table */
 #stats dl.stats {
   display: grid;
-  grid-template-columns: max-content max-content; /* label, value */
+  grid-template-columns: max-content max-content; 
   column-gap: 0.5rem;
   row-gap: 0.75rem;
   align-items: baseline;
-  text-align: left;        /* override any global centering */
-  max-width: 420px;        /* keeps label/value close together */
+  text-align: left;     
+  max-width: 420px;     
 }
 
-/* reset margins */
 #stats dl.stats dt,
 #stats dl.stats dd {
   margin: 0;
 }
 
-/* labels (left side) */
 #stats dl.stats dt {
   font-family: var(--font-serif, Georgia, "Times New Roman", serif);
   font-size: 0.8rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #6b7280;          /* gray-ish */
+  color: #6b7280;         
   font-weight: 600;
 }
 
-/* add the colon after the label */
 #stats dl.stats dt::after {
   content: " :";
   margin-left: 0.15rem;
 }
 
-/* values (right side) */
 #stats dl.stats dd {
   font-family: var(--font-serif, Georgia, "Times New Roman", serif);
   font-size: 1.2rem;
   font-weight: 700;
-  color: #111827;          /* dark text */
+  color: #111827;         
   padding-left: 0.25rem;
 }
 
-/* Slider row on the Meta page */
 .meta .commit-filter {
-  margin-top: 0.3rem;      /* if you want it closer to the "Meta" title */
-  margin-bottom: 0.3rem;   /* ↓ shrink space UNDER the slider */
+  margin-top: 0.3rem;      
+  margin-bottom: 0.3rem;  
 }
 
-/* Stats block right under the slider */
 .meta #stats {
-  margin-top: 0;           /* remove extra gap above stats */
+  margin-top: 0;        
 }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Meta</title>
 
-    <!-- your site-wide styles + nav -->
     <link rel="stylesheet" href="../styles.css" />
     <script src="../global.js" type="module"></script>
   </head>
@@ -12,7 +11,6 @@
     <main>
       <h1>Meta</h1>
 
-      <!-- Step 1.1: slider + time label -->
       <div class="commit-filter">
         <label for="commit-progress">
           Show commits until:
@@ -27,21 +25,15 @@
         </label>
       </div>
 
-      <!-- Step 3.1: Scrollytelling layout -->
       <div id="scrolly-1">
-        <!-- LEFT COLUMN: stats + narrative text -->
         <div id="scatter-story">
-          <!-- your stats bar now lives on the LEFT -->
           <div id="stats"></div>
-          <!-- .step divs for each commit will be appended here by main.js -->
         </div>
 
-        <!-- RIGHT COLUMN: sticky plot + tooltip + brush info + files -->
         <div id="scatter-plot">
           <h2>Commits by time of day</h2>
           <div id="chart"></div>
 
-          <!-- tooltip for commits -->
           <dl id="commit-tooltip" class="info tooltip" hidden>
             <dt>Commit</dt>
             <dd>
@@ -64,13 +56,10 @@
           <p id="selection-count">No commits selected</p>
           <dl id="language-breakdown" class="stats language-stats"></dl>
 
-          <!-- unit visualization for files stays on the RIGHT under the plot -->
           <dl id="files"></dl>
         </div>
       </div>
     </main>
-
-    <!-- Lab 8 logic -->
     <script type="module" src="main.js"></script>
   </body>
 </html>
