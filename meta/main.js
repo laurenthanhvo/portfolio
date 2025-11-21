@@ -1,5 +1,6 @@
 // meta/main.js
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
+import scrollama from "https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm";
 
 let data;
 let commits;
@@ -164,7 +165,6 @@ function renderTooltipContent(commit) {
     linesEl.textContent = `${commit.totalLines} lines edited`;
   }
 }
-
 
 function updateTooltipVisibility(isVisible) {
   const tooltip = document.getElementById("commit-tooltip");
@@ -510,6 +510,82 @@ function initializeTimeFiltering(allData, allCommits) {
   onTimeSliderChange();
 }
 
+/* --------------------- Step 3: Scrollytelling setup ------------------- */
+
+function setupScrollytelling(allData, allCommits) {
+  // Generate one .step div per commit with narrative text
+  d3
+    .select("#scatter-story")
+    .selectAll(".step")
+    .data(allCommits)
+    .join("div")
+    .attr("class", "step")
+    .html((d, i) => {
+      const filesTouched = d3.rollups(
+        d.lines,
+        (D) => D.length,
+        (row) => row.file
+      ).length;
+
+      return `
+        On ${d.datetime.toLocaleString("en", {
+          dateStyle: "full",
+          timeStyle: "short",
+        })},
+        I made <a href="${d.url}" target="_blank">${
+          i > 0
+            ? "another glorious commit"
+            : "my first commit, and it was glorious"
+        }</a>.
+        I edited ${d.totalLines} lines across ${filesTouched} files.
+        Then I looked over all I had made, and I saw that it was very good.
+      `;
+    });
+
+  const scroller = scrollama();
+
+  function onStepEnter(response) {
+    const commit = response.element.__data__;
+    if (!commit || !timeScale) return;
+
+    // Set commitMaxTime to this commit's time
+    commitMaxTime = commit.datetime;
+
+    // Sync slider + time label
+    const slider = document.getElementById("commit-progress");
+    const timeEl = document.getElementById("commit-time");
+
+    commitProgress = timeScale(commitMaxTime);
+    slider.value = String(commitProgress);
+    timeEl.textContent = commitMaxTime.toLocaleString(undefined, {
+      dateStyle: "long",
+      timeStyle: "short",
+    });
+
+    // Filter data exactly like the slider does
+    filteredCommits = allCommits.filter(
+      (d) => d.datetime <= commitMaxTime
+    );
+    const filteredData = allData.filter(
+      (row) => row.datetime <= commitMaxTime
+    );
+
+    renderCommitInfo(filteredData, filteredCommits);
+    updateScatterPlot(allData, filteredCommits);
+    updateFileDisplay(filteredCommits);
+  }
+
+  scroller
+    .setup({
+      container: "#scrolly-1",
+      step: "#scrolly-1 .step",
+    })
+    .onStepEnter(onStepEnter);
+
+  // Keep Scrollama layout in sync with viewport size
+  window.addEventListener("resize", () => scroller.resize());
+}
+
 /* ------------------------------- Bootstrap ----------------------------- */
 
 (async function init() {
@@ -522,4 +598,5 @@ function initializeTimeFiltering(allData, allCommits) {
   updateFileDisplay(commits);
 
   initializeTimeFiltering(data, commits);
+  setupScrollytelling(data, commits);
 })();

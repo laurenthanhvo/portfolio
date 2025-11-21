@@ -26,41 +26,50 @@
         </label>
       </div>
 
-      <!-- Step 2 unit visualization (files) -->
       <dl id="files">
         <!-- populated by D3 -->
       </dl>
+      
+      <!-- Step 3.1: Scrollytelling layout -->
+      <div id="scrolly-1">
+        <!-- Text column that Scrollama will control -->
+        <div id="scatter-story"></div>
 
-      <!-- summary stats -->
-      <div id="stats"></div>
+        <!-- Sticky column with stats + scatterplot + brush info -->
+        <div id="scatter-plot">
+          <!-- summary stats -->
+          <div id="stats"></div>
 
-      <!-- scatterplot -->
-      <h2>Commits by time of day</h2>
-      <div id="chart"></div>
+          <!-- scatterplot -->
+          <h2>Commits by time of day</h2>
+          <div id="chart"></div>
 
-      <!-- tooltip for commits -->
-      <dl id="commit-tooltip" class="info tooltip" hidden>
-        <dt>Commit</dt>
-        <dd>
-          <a href="" id="commit-link" target="_blank"></a>
-        </dd>
+          <!-- tooltip for commits -->
+          <dl id="commit-tooltip" class="info tooltip" hidden>
+            <dt>Commit</dt>
+            <dd>
+              <a href="" id="commit-link" target="_blank"></a>
+            </dd>
 
-        <dt>Date</dt>
-        <dd id="commit-date"></dd>
+            <dt>Date</dt>
+            <dd id="commit-date"></dd>
 
-        <dt>Time</dt>
-        <dd id="commit-time-detail"></dd>  <!-- this id MUST match JS -->
+            <dt>Time</dt>
+            <dd id="commit-time-detail"></dd>
 
-        <dt>Author</dt>
-        <dd id="commit-author"></dd>
+            <dt>Author</dt>
+            <dd id="commit-author"></dd>
 
-        <dt>Lines edited</dt>
-        <dd id="commit-lines"></dd>
-      </dl>
+            <dt>Lines edited</dt>
+            <dd id="commit-lines"></dd>
+          </dl>
 
+          <p id="selection-count">No commits selected</p>
+          <dl id="language-breakdown" class="stats language-stats"></dl>
+        </div>
+      </div>
 
-      <p id="selection-count">No commits selected</p>
-      <dl id="language-breakdown" class="stats language-stats"></dl>
+      <!-- Step 2 unit visualization (files) – moved to bottom per Step 3 -->
     </main>
 
     <script type="module" src="main.js"></script>
